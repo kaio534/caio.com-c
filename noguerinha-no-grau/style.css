@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Special+Elite&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #080a13;
+    color: #e0e6ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+    transition: background-color 0.8s ease;
+}
+
+/* Base Limpa */
+.container {
+    background-color: #0e1220;
+    width: 100%;
+    max-width: 850px;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.header-status {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #00d2df;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+h1 {
+    color: #00d2df;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #c0cbdb;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.caixa-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    background-color: #262938;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #00d2df;
+    color: #080a13;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 210, 223, 0.4);
+}
+
+/* ==========================================================================
+   ESTILO APOCALÍPTICO / TENEBROSO / ROBUSTO / GLITCH (EASTER EGG)
+   ========================================================================== */
+
+/* Fundo com piscada de alarme vermelho e textura suja */
+body.modo-apocalipse {
+    background: #030101;
+    animation: alarmePulsante 4s infinite alternate;
+}
+
+@keyframes alarmePulsante {
+    0% { background-color: #030101; }
+    50% { background-color: #0d0202; }
+    100% { background-color: #030101; }
+}
+
+/* CRT Scanline Overlay */
+body.modo-apocalipse .crt-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.8) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+    z-index: 99;
+    opacity: 0.6;
+}
+
+/* Container Robusto / Industrial Danificado */
+.container.apocalipse-interface {
+    background-color: #0a0808;
+    border: 3px solid #4a0d0d;
+    border-top: 5px solid #8b0000;
+    border-radius: 0px; /* Caixas brutas, sem cantos arredondados */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9), 0 0 40px rgba(139, 0, 0, 0.5);
+    animation: trepidaçãoCurta 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.container.apocalipse-interface .header-status {
+    color: #ff2222;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bold;
+    letter-spacing: 4px;
+    animation: piscarTexto 0.8s infinite;
+}
+
+/* Título Tenebroso com efeito Glitch Text */
+.container.apocalipse-interface h1 {
+    font-family: 'Share Tech Mono', monospace;
+    color: #8b0000;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0px #000, -2px -2px 0px #ff0000;
+    position: relative;
+    animation: glitchText 2s infinite;
+}
+
+.container.apocalipse-interface p {
+    font-family: 'Special Elite', monospace;
+    color: #a39595;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    background: rgba(15, 5, 5, 0.8);
+    padding: 20px;
+    border-left: 3px solid #8b0000;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* Moldura e Ajuste da Imagem Industrial */
+.container-imagem {
+    margin: 25px 0;
+}
+
+.moldura-apocalipse {
+    position: relative;
+    border: 2px solid #5a0f0f;
+    padding: 6px;
+    background: #000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.moldura-apocalipse img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(40%) contrast(140%) sepia(20%);
+    border: 1px solid #2a0505;
+}
+
+.glitch-line {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 0, 0, 0.6);
+    box-shadow: 0 0 10px #ff0000;
+    animation: moverGlitch 3s infinite linear;
+}
+
+/* Botões Brutalistas e Tenebrosos */
+.container.apocalipse-interface button {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #1a0505;
+    color: #ff4444;
+    border: 2px solid #5a0f0f;
+    border-radius: 0px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.container.apocalipse-interface button:hover {
+    background-color: #8b0000;
+    color: #ffffff;
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    transform: scale(1.02);
+}
+
+/* Animações e Efeitos */
+@keyframes piscarTexto {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes glitchText {
+    0% { text-shadow: 2px 2px 0px #000, -2px -2px 0px #ff0000; }
+    20% { text-shadow: -3px 0px 0px #8b0000, 3px 0px 0px #000; }
+    40% { text-shadow: 2px -2px 0px #000, -2px 2px 0px #ff0000; }
+    60% { text-shadow: 0px 0px 0px #000; }
+    80% { text-shadow: 3px 1px 0px #8b0000, -1px -3px 0px #000; }
+    100% { text-shadow: 2px 2px 0px #000, -2px -2px 0px #ff0000; }
+}
+
+@keyframes moverGlitch {
+    0% { top: 0%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+@keyframes trepidaçãoCurta {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
